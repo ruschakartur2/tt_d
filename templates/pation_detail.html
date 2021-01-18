@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+
+    <div class="post-entry">
+        <h2>Card: {{ object.name }}</h2>
+        <li><b>Name:</b>  {{ object.name }}</li>
+        <li><b>SurName:</b>  {{ object.surname }}</li>
+        <li><b>Adress:</b>  {{ object.adress }}</li>
+        <li><b>Phone Number:</b>  {{ object.phonenumber}}</li>
+        <li><b>Discript</b>  {{ object.discrict }}</li>
+        <li><b>Diagnos</b>  {{ object.diagnos }}</li>
+     </div>
+    <p><a href="{% url 'edit_patient' object.pk %}">+ Update this pation</a></p>
+    <p><a href="{% url 'delete_patient' object.pk %}">+ Delete this pation</a></p>
+
+{% endblock content %}
+
+
+</body>
+</html>
